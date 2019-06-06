@@ -196,7 +196,7 @@ class EfficientFrontier(base_optimizer.BaseScipyOptimizer):
             constraints = self.constraints + [target_constraint]
 
         result = sco.minimize(
-            objective_functions.negative_sharpe,
+            objective_functions.negative_mean_return,
             x0=self.initial_guess,
             args=args,
             method="SLSQP",
